@@ -2,7 +2,7 @@ import './General.css';
 
 function General() {
     return (
-        <div className="general">
+        <div className="info general">
             <h3>Personal Information</h3>
             <label>
                 Full Name
