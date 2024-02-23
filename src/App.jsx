@@ -1,11 +1,16 @@
 import './App.css'
-import CvBuilder from './components/CvBuilder'
+import Forms from './components/Forms'
 
 function App() {
 
   return (
     <>
-      <CvBuilder />
+      <section className="forms">
+       <Forms />
+      </section>
+      <section className="cv">
+
+      </section>
     </>
   )
 }
