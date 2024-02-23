@@ -1,32 +1,8 @@
-import './Forms.css';
-
-function General() {
-    return (
-        <div className="info general">
-            <h3>Personal Information</h3>
-            <label>
-                Full Name
-                <input type="text"/>
-            </label>
-            <label>
-                E-mail
-                <input type="email" />
-            </label>
-            <label>
-                Phone Number
-                <input type="tel" />
-            </label>
-            <div>
-                <button>Add</button>
-                <button>Edit</button>
-            </div>
-        </div>
-    )
-}
+import './Info.css';
 
 function Education() {
     return (
-        <div className="info education">
+        <form className="info education">
             <h3>Education</h3>
             <label>
                 School / University
@@ -36,7 +12,7 @@ function Education() {
                 Degree
                 <input type="text" />
             </label>
-            <div className="date-of-study">
+            <div className="dates">
                 <label>
                     Start Date
                     <input type="text" />
@@ -48,15 +24,15 @@ function Education() {
             </div>
             <div>
                 <button>Add</button>
-                <button>Edit</button>
+                <button type="button">Edit</button>
             </div>
-        </div>
+        </form>
     )
 }
 
 function Experience() {
     return (
-        <div className="info experience">
+        <form className="info experience">
             <h3>Experience</h3>
             <label>
                 Company
@@ -66,7 +42,7 @@ function Experience() {
                 Position Title
                 <input type="text" />
             </label>
-            <div>
+            <div className="dates">
                 <label>
                     Start Date
                     <input type="text" />
@@ -76,19 +52,20 @@ function Experience() {
                     <input type="text" />
                 </label>
             </div>
-            
-        </div>
+            <label>
+                Description
+                <textarea></textarea>
+            </label>
+            <div>
+                <button>Add</button>
+                <button type="button">Edit</button>
+            </div>
+
+        </form>
     );
 }
 
-function Forms() {
-    return (
-        <section className="cv-builder">
-            <General />
-            <Education />
-            <Experience />
-        </section>
-    )
+export {
+    Education,
+    Experience
 }
-
-export default Forms;
