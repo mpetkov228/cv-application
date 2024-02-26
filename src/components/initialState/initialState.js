@@ -2,7 +2,8 @@ const personalInfo = {
     fullName: '',
     email: '',
     phoneNumber: '',
-    career: ''
+    career: '',
+    address: ''
 };
 
 const education = {

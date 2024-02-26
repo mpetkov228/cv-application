@@ -1,8 +1,8 @@
-function Input({ label, type, onChange }) {
+function Input({ id, label, type, onChange, value}) {
     return (
         <label>
             {label}
-            <input type={type} onChange={onChange} />
+            <input id={id} name={id} type={type} onChange={onChange} value={value} />
         </label>
     );
 }
