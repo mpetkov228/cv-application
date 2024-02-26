@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import './Info.css';
 import Input from './Input';
-import { education } from './initialState/initialState';
+import { education, experience } from './initialState/initialState';
 
 function Education({ formSubmit }) {
     const [educationInfo, setEducationInfo] = useState(education);
@@ -38,7 +38,7 @@ function Education({ formSubmit }) {
                 value={educationInfo.endDate} 
                 onChange={(e) => setEducationInfo({ ...educationInfo, endDate: e.target.value })}
             />      
-            <div>
+            <div className="buttons">
                 <button>Add</button>
                 <button type="button">Edit</button>
             </div>
@@ -47,32 +47,44 @@ function Education({ formSubmit }) {
 }
 
 function Experience({ formSubmit }) {
+    const [experienceInfo, setExperienceInfo] = useState(experience);
+
     return (
         <form onSubmit={formSubmit} id="exp" className="info experience">
             <h3>Experience</h3>
-            <label>
-                Company
-                <input type="text" />
-            </label>
-            <label>
-                Position Title
-                <input type="text" />
-            </label>
-            <div className="dates">
-                <label>
-                    Start Date
-                    <input type="text" />
-                </label>
-                <label>
-                    End Date
-                    <input type="text" />
-                </label>
-            </div>
+            <Input 
+                id="company"
+                label="Company"
+                type="text"
+                value={experienceInfo.company}
+                onChange={(e) => setExperienceInfo({ ...experienceInfo, company: e.target.value })}
+            />
+            <Input 
+                id="positionTitle"
+                label="Position / Title"
+                type="text"
+                value={experienceInfo.positionTitle}
+                onChange={(e) => setExperienceInfo({ ...experienceInfo, positionTitle: e.target.value })}
+            />
+            <Input 
+                id="startDate"
+                label="Start Date"
+                type="text"
+                value={experienceInfo.startDate}
+                onChange={(e) => setExperienceInfo({ ...experienceInfo, startDate: e.target.value })}
+            />
+            <Input 
+                id="endDate"
+                label="End Date"
+                type="text"
+                value={experienceInfo.endDate}
+                onChange={(e) => setExperienceInfo({ ...experienceInfo, endDate: e.target.value })}
+            />
             <label>
                 Description
-                <textarea></textarea>
+                <textarea name="description"></textarea>
             </label>
-            <div>
+            <div className="buttons">
                 <button>Add</button>
                 <button type="button">Edit</button>
             </div>

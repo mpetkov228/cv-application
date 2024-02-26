@@ -20,7 +20,6 @@ function App() {
     } else if (e.target.id == 'exp') {
       setExperienceInfo(Object.fromEntries(formData));
     }
-    console.log(educationInfo);
   }
 
   return (
@@ -51,6 +50,14 @@ function App() {
           <p>{educationInfo.degree}</p>
           <p>{educationInfo.startDate}</p>
           <p>{educationInfo.endDate}</p>
+        </div>
+        <h3>Experience</h3>
+        <div className="experience">
+          <p>{experienceInfo.company}</p>
+          <p>{experienceInfo.positionTitle}</p>
+          <p>{experienceInfo.startDate}</p>
+          <p>{experienceInfo.endDate}</p>
+          <p>{experienceInfo.description}</p>
         </div>
       </section>
     </>

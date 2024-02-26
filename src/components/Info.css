@@ -1,7 +1,7 @@
 .info {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     gap: 5px;
 }
 
@@ -9,4 +9,25 @@ label {
     display: flex;
     flex-direction: column;
     text-align: start;
+}
+
+.education {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+textarea {
+    width: 256px;
+    resize: none;
+}
+
+.buttons {
+    margin-top: 10px;
+    display: flex;
+    gap: 20px;
+}
+
+button {
+    font-size: 1.1rem;
+    padding: 6px 10px;
 }
