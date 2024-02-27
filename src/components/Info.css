@@ -16,10 +16,12 @@ label {
     margin-bottom: 10px;
 }
 
-.edu-header {
+.form-header {
+    padding: 20px;
     width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 20px;
 }
 
 textarea {
