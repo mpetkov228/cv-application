@@ -16,6 +16,12 @@ label {
     margin-bottom: 10px;
 }
 
+.edu-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
 textarea {
     width: 256px;
     resize: none;

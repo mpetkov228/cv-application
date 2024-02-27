@@ -6,16 +6,34 @@ import { education, experience } from './initialState/initialState';
 
 function Education({ formSubmit }) {
     const [educationInfo, setEducationInfo] = useState(education);
+    const [isEduFormShown, setIsEduFormShown] = useState(false);
+
+    function showForm() {
+        setIsEduFormShown(!isEduFormShown);
+    }
+
+    if (!isEduFormShown) {
+        return (
+            <div className="edu-header">
+                <h3>Education</h3>
+                <button onClick={showForm}>Show</button>
+            </div>
+        )
+    }
 
     return (
         <form onSubmit={formSubmit} id="edu" className="info education">
-            <h3>Education</h3>
+            <div className="edu-header">
+                <h3>Education</h3>
+                <button onClick={showForm}>Hide</button>
+            </div>
             <Input 
                 id="school" 
                 label="School / Univesity" 
                 type="text" 
                 value={educationInfo.school} 
-                onChange={(e) => setEducationInfo({ ...educationInfo, school: e.target.value })} 
+                onChange={(e) => setEducationInfo({ ...educationInfo, school: e.target.value })}
+                isRequired={true}
             />
             <Input 
                 id="degree" 
@@ -23,6 +41,7 @@ function Education({ formSubmit }) {
                 type="text" 
                 value={educationInfo.degree} 
                 onChange={(e) => setEducationInfo({ ...educationInfo, degree: e.target.value })}
+                isRequired={true}
             />
             <Input 
                 id="startDate" 
@@ -30,6 +49,7 @@ function Education({ formSubmit }) {
                 type="text" 
                 value={educationInfo.startDate} 
                 onChange={(e) => setEducationInfo({ ...educationInfo, startDate: e.target.value })}
+                isRequired={true}
             />
             <Input 
                 id="endDate" 
@@ -37,6 +57,7 @@ function Education({ formSubmit }) {
                 type="text" 
                 value={educationInfo.endDate} 
                 onChange={(e) => setEducationInfo({ ...educationInfo, endDate: e.target.value })}
+                isRequired={true}
             />      
             <div className="buttons">
                 <button>Add</button>
@@ -58,6 +79,7 @@ function Experience({ formSubmit }) {
                 type="text"
                 value={experienceInfo.company}
                 onChange={(e) => setExperienceInfo({ ...experienceInfo, company: e.target.value })}
+                isRequired={true}
             />
             <Input 
                 id="positionTitle"
@@ -65,6 +87,7 @@ function Experience({ formSubmit }) {
                 type="text"
                 value={experienceInfo.positionTitle}
                 onChange={(e) => setExperienceInfo({ ...experienceInfo, positionTitle: e.target.value })}
+                isRequired={true}
             />
             <Input 
                 id="startDate"
@@ -72,6 +95,7 @@ function Experience({ formSubmit }) {
                 type="text"
                 value={experienceInfo.startDate}
                 onChange={(e) => setExperienceInfo({ ...experienceInfo, startDate: e.target.value })}
+                isRequired={true}
             />
             <Input 
                 id="endDate"
@@ -79,10 +103,11 @@ function Experience({ formSubmit }) {
                 type="text"
                 value={experienceInfo.endDate}
                 onChange={(e) => setExperienceInfo({ ...experienceInfo, endDate: e.target.value })}
+                isRequired={true}
             />
             <label>
                 Description
-                <textarea name="description"></textarea>
+                <textarea name="description" required></textarea>
             </label>
             <div className="buttons">
                 <button>Add</button>

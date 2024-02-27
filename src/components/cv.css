@@ -1,0 +1,31 @@
+.cv {
+    padding: 0;
+    flex: 2;
+    background-color: white;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+}
+
+.cv-header {
+    background-color: rgb(82, 142, 255);
+    color: white;
+    height: 160px;
+}
+
+.contact-details p {
+    padding: 10px;
+}
+
+.email {
+    flex: 1;
+}
+
+.phone-number {
+    flex: 2;
+    text-align: center;
+}
+
+.address {
+    flex: 1;
+}
