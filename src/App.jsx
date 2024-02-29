@@ -1,4 +1,7 @@
 import { useState } from 'react'
+import { MdEmail } from "react-icons/md";
+import { FaPhoneAlt } from "react-icons/fa";
+import { FaLocationDot } from "react-icons/fa6";
 
 import './App.css'
 import './components/cv.css'
@@ -17,7 +20,9 @@ function App() {
   function handleSubmit(e) {
     e.preventDefault();
     const formData = new FormData(e.target);
-    
+    e.target.reset();
+    console.log(e.target);
+
     if (e.target.id == 'edu') {
       setEducationInfo(Object.fromEntries(formData));
     } else if (e.target.id == 'exp') {
@@ -45,29 +50,42 @@ function App() {
           <h1>{userInfo.fullName}</h1>
           <h3>{userInfo.career}</h3>
           <div className="contact-details">
-            <p className="email">{userInfo.email}</p>
-            <p className="phone-number">{userInfo.phoneNumber}</p>
-            <p className="address">{userInfo.address}</p>
+            <div className="email">
+              <MdEmail />
+              <div className="header-text">{userInfo.email}</div>
+            </div>
+            <div className="phone-number">
+              <FaPhoneAlt />
+              <div className="header-text">{userInfo.phoneNumber}</div>
+            </div>
+            <div className="address">
+              <FaLocationDot />
+              <div className="header-text">{userInfo.address}</div>
+            </div>
           </div>
         </div>
 
         <div className="cv-education">
           <h3>Education</h3>
           <div className="education">
-            <p>{educationInfo.school}</p>
-            <p>{educationInfo.degree}</p>
-            <p>{educationInfo.startDate}</p>
-            <p>{educationInfo.endDate}</p>
+            <p><strong>School / University:</strong> {educationInfo.school}</p>
+            <p><strong>Degree / Field of Study:</strong> {educationInfo.degree}</p>
+            <p><strong>From:</strong> {educationInfo.startDate}</p>
+            <p><strong>To:</strong> {educationInfo.endDate}</p>
           </div>
+          <hr />
         </div>
-
-        <h3>Experience</h3>
-        <div className="experience">
-          <p>{experienceInfo.company}</p>
-          <p>{experienceInfo.positionTitle}</p>
-          <p>{experienceInfo.startDate}</p>
-          <p>{experienceInfo.endDate}</p>
-          <p>{experienceInfo.description}</p>
+        
+        <div className="cv-experience">
+          <h3>Experience</h3>
+          <div className="experience">
+            <p><strong>Company:</strong> {experienceInfo.company}</p>
+            <p><strong>Position / Title:</strong> {experienceInfo.positionTitle}</p>
+            <p><strong>From:</strong> {experienceInfo.startDate}</p>
+            <p><strong>To:</strong> {experienceInfo.endDate}</p>
+            <p><strong>Description:</strong> {experienceInfo.description}</p>
+          </div>
+          <hr />
         </div>
       </section>
     </>

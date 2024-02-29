@@ -94,7 +94,6 @@ function Experience({ formSubmit }) {
                 <button onClick={showForm}>Hide</button>
             </div>
             <form onSubmit={formSubmit} id="exp" className="info experience">
-                <h3>Experience</h3>
                 <Input 
                     id="company"
                     label="Company"
